@@ -1,0 +1,17 @@
+library(RColorBrewer)
+set.seed(2017)
+
+## Generate Title: Bivariate Normal Distribution
+
+group <- list()
+
+group['bluemean'] <- data.frame(
+    x=rnorm(n=10, mean=1, sd=1),
+    y=rnorm(n=10, mean=0, sd=1),
+    col=rep(brewer.pal(9,'Blues')[6], 10)
+)
+group['orangemean'] <- data.frame(
+    x=rnorm(n=10, mean=0, sd=1),
+    y=rnorm(n=10, mean=1, sd=1),
+    col=rep(brewer.pal(9,'Oranges')[6], 10)
+)
