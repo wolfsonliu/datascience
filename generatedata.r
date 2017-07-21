@@ -87,3 +87,17 @@ p <- ggplot(group[['train']], aes(x=x, y=y, color=I(color))) +
 
 
 ## -----------------
+## 生成线性拟合数据
+## -----------------
+
+x <- round(runif(100, 1, 200))
+
+y <- 2 + 3 * x + rnorm(100, sd = 2) * 100
+
+model <- lm(y~x)
+
+plot(x, y)
+abline(2, 3, col='red')
+abline(model$coefficients[1], model$coefficients[2], col='blue')
+
+## -----------------
